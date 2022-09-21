@@ -33,3 +33,13 @@ mysql> select * from school;
 |    216 | mahesh |     9 | dbms    |
 +--------+--------+-------+---------+
 1 row in set (0.00 sec)
+mysql> delete from college where name;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> select * from college;
++-------+-------+--------+
+| regno | name  | course |
++-------+-------+--------+
+|   124 | null  | cs     |
++-------+-------+--------+
+1 row in set (0.00 sec)
