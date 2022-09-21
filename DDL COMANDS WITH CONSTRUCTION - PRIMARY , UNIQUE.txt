@@ -1,0 +1,43 @@
+mysql> create table school(rollno int(5),name char(10),class int(5),subject char(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc school;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| rollno  | int(5)   | YES  |     | NULL    |       |
+| name    | char(10) | YES  |     | NULL    |       |
+| class   | int(5)   | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> alter table school add primary key (name);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc school;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| rollno  | int(5)   | YES  |     | NULL    |       |
+| name    | char(10) | NO   | PRI |         |       |
+| class   | int(5)   | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> alter table school add unique key (subject);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc school;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| rollno  | int(5)   | YES  |     | NULL    |       |
+| name    | char(10) | NO   | PRI |         |       |
+| class   | int(5)   | YES  |     | NULL    |       |
+| subject | char(10) | YES  | UNI | NULL    |       |
++---------+----------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
