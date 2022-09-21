@@ -1,0 +1,35 @@
+# CSA0516-DBMS
+mysql> create table school(rollno int(5),name char(10),class int(5),subject char(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc school;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| rollno  | int(5)   | YES  |     | NULL    |       |
+| name    | char(10) | YES  |     | NULL    |       |
+| class   | int(5)   | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+mysql> insert into school values(287,'mahesh',9,'dbms');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from school;
++--------+--------+-------+---------+
+| rollno | name   | class | subject |
++--------+--------+-------+---------+
+|    287 | mahesh |     9 | dbms    |
++--------+--------+-------+---------+
+1 row in set (0.00 sec)
+mysql>  update school set rollno=216 where name='mahesh';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from school;
++--------+--------+-------+---------+
+| rollno | name   | class | subject |
++--------+--------+-------+---------+
+|    216 | mahesh |     9 | dbms    |
++--------+--------+-------+---------+
+1 row in set (0.00 sec)
