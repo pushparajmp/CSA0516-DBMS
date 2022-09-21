@@ -1,0 +1,40 @@
+mysql> use pushparaj;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_pushparaj |
++---------------------+
+| library             |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from library;
++-------+------+-------+------------+--------+
+| regno | name | books | department | gender |
++-------+------+-------+------------+--------+
+|  1216 | modi | c     | cse        | NULL   |
++-------+------+-------+------------+--------+
+1 row in set (0.02 sec)
+
+mysql> alter table library add incharge char(10);
+Query OK, 1 row affected (0.03 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> desc library;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| regno      | int(11)  | YES  |     | NULL    |       |
+| name       | char(10) | YES  |     | NULL    |       |
+| books      | char(10) | NO   | PRI |         |       |
+| department | char(10) | YES  |     | NULL    |       |
+| gender     | char(5)  | YES  | UNI | NULL    |       |
+| incharge   | char(10) | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> drop table library;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc library;
+ERROR 1146 (42S02): Table 'pushparaj.library' doesn't exist
